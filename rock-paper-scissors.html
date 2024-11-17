@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="RockPaperScissors.css">
+</head>
+<body>
+    <header>
+        <h1>Rock, Paper, Scissors</h1>
+        <a href="quiz.html">Back to Home</a>
+    </header>
+
+    <section class="game-container">
+        <div class="choices">
+            <button class="choice" id="rock" onclick="playGame('rock')">Rock</button>
+            <button class="choice" id="paper" onclick="playGame('paper')">Paper</button>
+            <button class="choice" id="scissors" onclick="playGame('scissors')">Scissors</button>
+        </div>
+        
+        <div class="result" id="result">
+            <p id="message">Choose Rock, Paper, or Scissors to start the game!</p>
+        </div>
+
+        <!-- Display choices -->
+        <div class="choices-display" id="choices-display">
+            <p id="playerChoiceText">Your Choice: -</p>
+            <p id="computerChoiceText">Computer's Choice: -</p>
+        </div>
+
+        <div class="score" id="score">
+            <p>Player: <span id="playerScore">0</span> | Computer: <span id="computerScore">0</span></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Rock, Paper, Scissors</p>
+    </footer>
+
+    <script src="rock-paper-scissors.js"></script>
+</body>
+</html>

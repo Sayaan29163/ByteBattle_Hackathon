@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <style>
+        /* Make the body a flex container to center all elements */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            height: 100vh; /* Full viewport height */
+            background-image: url('https://th.bing.com/th?id=OIP.92YijJkH3mzwAVTVCT3LOgHaEt&w=313&h=199&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2'); /* Background image */
+            background-size: cover; /* Make the background cover the entire body */
+            background-position: center; /* Center the background image */
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center horizontally */
+            justify-content: flex-start; /* Align items from top */
+            text-align: center;
+            padding-top: 40px; /* Add some space on top */
+        }
+
+        /* Quiz container styling */
+        .quiz-container {
+            width: 500px; /* Set a fixed width for the quiz box */
+            padding: 20px;
+            border: 1px solid #1d3a25;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgb(0, 255, 51);
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Stack items from top */
+            overflow-y: auto; /* Make content scrollable if it overflows */
+            max-height: 500px; /* Ensure it doesn't grow too tall */
+        }
+
+        .question {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .options button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #ff0000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .options button:hover {
+            background-color: #1e00ff;
+        }
+
+        /* Centering the result text */
+        .result {
+            font-size: 20px;
+            margin-top: 20px;
+            display: flex;
+            justify-content: center; /* Horizontally center */
+            align-items: center; /* Vertically center */
+            text-align: center; /* Ensure text is centered within the box */
+        }
+
+        /* Style for the restart button */
+        #restart {
+            width: 100%; /* Make the button take up the full width */
+            padding: 15px; /* Add padding for a bigger button */
+            font-size: 18px; /* Adjust font size */
+            background-color: #28a745; /* Green color for restart button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-align: center;
+            display: block;
+        }
+
+        #restart:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+        #restart:focus {
+            outline: none; /* Remove focus outline */
+        }
+
+        /* Timer styling */
+        .timer {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #ff0000;
+        }
+
+        /* Style for back to home button */
+        #back-to-home {
+            width: 100%; /* Make the button take up the full width */
+            padding: 15px; /* Add padding for a bigger button */
+            font-size: 18px; /* Adjust font size */
+            background-color: #007bff; /* Blue color for home button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #back-to-home:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        #back-to-home:focus {
+            outline: none; /* Remove focus outline */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Quiz container -->
+    <div class="quiz-container">
+        <h1>Quiz App</h1>
+
+        <!-- Timer display -->
+        <div class="timer" id="timer">Time: 00:00</div>
+
+        <div id="Quiz">
+            <p class="question" id="question"></p>
+            <div class="options" id="options"></div>
+        </div>
+
+        <div class="result" id="result"></div>
+        <button id="restart" style="display:none;" onclick="restartQuiz()">Restart Quiz</button>
+        <button id="back-to-home" onclick="goBackToHome()">Back to Home</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

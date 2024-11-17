@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI for Social Good Quiz</title>
+    <style>
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: lightblue; /* Light blue base color */
+            color: white;
+        }
+
+        /* Main container for scrolling content */
+        .main-container {
+            height: 100vh; /* Full viewport height */
+            overflow-y: scroll; /* Enable scrolling */
+            scroll-behavior: smooth; /* Smooth scrolling effect */
+        }
+
+        /* Section styling */
+        section {
+            height: 100vh; /* Each section takes up full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Specific styles for the start section */
+        .start-section {
+            position: relative;
+            background-color: lightblue; /* Blue background around the logo */
+        }
+
+        .start-section::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url('https://people.cs.vt.edu/~jicho/figs/ai-social-good.png');
+            background-size: contain; /* Adjust size to fit the logo proportionally */
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 1; /* Ensure the logo is fully visible */
+            z-index: 0;
+        }
+
+        /* Content container for start section */
+        .start-container {
+            position: relative; /* Stack content on top of background */
+            z-index: 1; /* Ensure content is above the logo */
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+            width: 60%;
+            max-width: 500px;
+        }
+
+        .start-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            font-size: 18px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none; /* Ensure it doesn't look like a hyperlink */
+            transition: background-color 0.3s;
+        }
+
+        .start-btn:hover {
+            background-color: #218838;
+        }
+
+       /* Games Section */
+.games-section {
+    background-image: url('https://img.freepik.com/premium-photo/glimpses-enigmatic-northern-lights-replicable-aurora-borealis-pattern-seamless-harmony_1000124-54852.jpg'); /* Replace with the actual path to the image */
+    background-size: cover; /* Ensures the image covers the section fully */
+    background-position: center; /* Centers the image */
+    background-repeat: repeat; /* Repeats the pattern seamlessly */
+    color: white; /* Text color */
+    text-align: center;
+    padding: 40px;
+}
+
+/* Feature 1 Section */
+.features-section {
+    background-image: url('https://images.hdqwalls.com/download/underwater-world-3840x2160.jpg'); /* Replace with the actual path to the image */
+    background-size: 200px 200px; /* Creates a tile pattern */
+    background-position: top left; /* Position the pattern at the top left */
+    background-repeat: repeat; /* Seamlessly repeats */
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+/* Feature 2 Section */
+.features-section.alt {
+    background-image: url('https://images.hdqwalls.com/download/underwater-world-3840x2160.jpg'); /* Replace with the actual path to the image */
+    background-size: contain; /* Keeps the full image visible */
+    background-repeat: no-repeat; /* No repeat for this section */
+    background-position: center; /* Center-aligns the image */
+    background-color: #007bff; /* Add a fallback color */
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+
+/* Cheat Sheet Section with moving background */
+.cheat-sheet-section {
+    background-image: url('https://thumbs.dreamstime.com/b/andromeda-galaxy-its-nucleus-light-268134764.jpg'); /* Path to the image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* No repetition of the image */
+    background-position: 0 50%; /* Start horizontally at the left */
+    animation: move-bg 10s linear infinite; /* Apply the animation */
+    color: black; /* Text color */
+    text-align: center;
+    padding: 40px;
+}
+
+/* Keyframes for horizontal background shift */
+@keyframes move-bg {
+    0% {
+        background-position: 0 50%; /* Start from the left */
+    }
+    50% {
+        background-position: 50% 50%; /* Move to the center */
+    }
+    100% {
+        background-position: 100% 50%; /* Move to the right */
+    }
+}
+
+
+
+
+        
+
+        .games-section h1 {
+            font-size: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            background-color: transparent; /* No background, uses section's background color */
+            padding: 10px;
+            display: inline-block;
+        }
+
+        .games-section p {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .games-section ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .games-section ul li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .games-section a {
+            color: yellow;
+            text-decoration: underline;
+        }
+
+        .games-section a:hover {
+            color: #ffcc00;
+        }
+
+        /* Cheat Sheet Section with moving background */
+.cheat-sheet-section {
+    background-image: url('https://thumbs.dreamstime.com/b/andromeda-galaxy-its-nucleus-light-268134764.jpg'); /* Path to the image */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* No repetition of the image */
+    background-position: 0 50%; /* Start horizontally at the left */
+    animation: move-bg 10s linear infinite; /* Apply the animation */
+    color: black; /* Text color */
+    text-align: center;
+    padding: 40px;
+}
+
+.cheat-sheet-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.cheat-sheet-container h1 {
+    font-size: 30px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.cheat-sheet-container .team-member {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cheat-sheet-container .team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.cheat-sheet-container .team-member .info {
+    text-align: left;
+}
+
+.cheat-sheet-container .team-member .info h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.cheat-sheet-container .team-member .info p {
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+@keyframes move-bg {
+    0% {
+        background-position: 0 50%; /* Start from the left */
+    }
+    50% {
+        background-position: 50% 50%; /* Move to the center */
+    }
+    100% {
+        background-position: 100% 50%; /* Move to the right */
+    }
+}
+
+        /* Features Section */
+        .features-section {
+    background-image: url('https://img.freepik.com/premium-photo/photo-glowing-meteor-shower-night-sky-backdrop_1060272-53847.jpg'); /* Replace with the correct path */
+    background-size: cover; /* Ensures the image covers the section fully */
+    background-position: center; /* Centers the image */
+    background-repeat: repeat; /* Repeats the pattern seamlessly */
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+        .features-section.alt {
+            background-color: #007bff; /* Alternate background for distinction */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Start Section -->
+        <section class="start-section">
+            <div class="start-container">
+                <h1>AI for Social Good Quiz</h1>
+                <p>Test your knowledge of the topic: AI for Social Good</p>
+                <a href="index.html" class="start-btn">Start Quiz</a>
+            </div>
+        </section>
+
+        <!-- Games Section -->
+        <section class="games-section">
+            <div style="text-align: center; padding: 20px; color: white;">
+                <h1 style="font-size: 40px; margin-bottom: 20px;">GAMES TO TRY</h1>
+                <ul style="list-style: none; padding: 0; font-size: 20px;">Explore fun activities and challenges to boost your knowledge and have fun!</p>
+                    <li style="margin: 10px 0;">
+                        <a href="tic-tac-toe.html" target="_blank" style="color: rgb(255, 0, 0); text-decoration: none; text-decoration: solid;"> Play Tic Tac Toe</a>
+                    </li><li>    <a href="Snake-game.html" target="_blank" style="color: rgb(255, 0, 255); text-decoration: none; text-decoration: solid;"> Play Snake Game</a>
+                    </li><li>    <a href="rock-paper-scissors.html" target="_blank" style="color: rgb(238, 255, 0); text-decoration: none; text-decoration: solid;"> Play Rock Paper Scissors</a>
+                    </li>
+            </ul>
+            <p>
+        </section>
+        
+
+<!-- First Feature Section -->
+<section class="features-section alt" style="background-image: url('https://images.hdqwalls.com/download/underwater-world-3840x2160.jpg'); background-size: contain; background-repeat: no-repeat; background-position: center; background-color: #007bff; color: white; text-align: center; padding: 40px;">
+    <h1 style="font-size: 30px; font-weight: bold; margin-bottom: 20px; display: block; width: 100%;">Discover About AI</h1>
+    <p style="font-size: 18px; margin-top: 10px; line-height: 1.5; display: block; width: 100%;">Learn about the first AI who helped save the world!</p>
+</section>
+
+<!-- Second Feature Section -->
+<section class="features-section" style="background-image: url('https://img.freepik.com/premium-photo/photo-glowing-meteor-shower-night-sky-backdrop_1060272-53847.jpg'); background-size: cover; background-position: center; background-repeat: repeat; color: white; text-align: center; padding: 40px;">
+    <h1 style="font-size: 30px; font-weight: bold; margin-bottom: 20px; display: block; width: 100%;">Features</h1>
+    <p style="font-size: 18px; margin-top: 10px; line-height: 1.5; display: block; width: 100%;">Learn fun facts about AI for social good and explore more trivia!</p>
+</section>
+
+
+
+        <!-- Cheat Sheet Section -->
+<section class="cheat-sheet-section">
+    <div class="cheat-sheet-container">
+        <h1>About Us</h1>
+        <div class="team-member">
+            <img src="https://th.bing.com/th/id/OIP.rk5aEvd9V8_Db1onm7Xh3wHaEK?w=319&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Sayaan's's Photo"> <!-- Replace with your actual photo -->
+            <div class="info">
+                <h2>Sayaan</h2>
+                <p>Hi its sayaan here</p>
+            </div>
+        </div>
+        <div class="team-member">
+            <img src="https://th.bing.com/th/id/OIP.6Xs0OtUIKdj144bGBuj6CQHaH9?rs=1&pid=ImgDetMain" alt="Nayam's Photo"> <!-- Replace with your co-developer's photo -->
+            <div class="info">
+                <h2>Nayam</h2>
+                <p>Nayam here!</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </div>
+
+</body>
+</html>
